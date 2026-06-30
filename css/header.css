@@ -1,0 +1,132 @@
+.header {
+   padding: 5px 0 5px 0;
+   background-color: #758053;
+}
+
+.logo-container {
+   display: grid; 
+}
+
+.logo {
+   display: block;
+   width: 100%;
+   max-inline-size: 100%;
+   height: auto;
+   /* filter: invert(1); */
+}
+
+
+
+.header_link {
+   position: relative;
+   width: 250px;
+   box-sizing: border-box;
+   object-fit: cover;
+}
+
+/* Текст під логотипом */
+.logo-subtitle {
+   color: #000000;
+   font-size: 12px;
+   font-weight: 400;
+   letter-spacing: 1px;
+   font-family: "Rubik Glitch", system-ui;
+
+   z-index: 1;
+   display: flex;
+   align-items: flex-end;
+   justify-self: end;
+   transform: translate(-10px, -20px);
+   text-transform: uppercase;
+}
+
+.logo,
+.logo-subtitle {
+   grid-area: 1 / 1; /* Обидва елементи займають 1-й рядок і 1-у колонку */
+}
+
+.header__body {
+   display: flex;
+   justify-content: space-between;
+}
+
+.header__menu {
+   display: flex;
+   justify-content: center;
+}
+
+.menu__list{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0;
+
+   flex-wrap: wrap;
+   column-gap: 32px;
+   row-gap: 5px;
+}
+
+.menu__item {
+   max-height: fit-content;
+}
+
+.menu__link { 
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 1.5;
+   letter-spacing: 0.5px;
+
+}
+
+
+
+
+/* Базові стилі пункту меню */
+.menu__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 28px;
+    color: #000000;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: transparent;
+    z-index: 1;
+    transition: color 0.25s ease;
+}
+
+/* ЗОВНІШНІЙ ШАР (Створює білу рамку) */
+.menu__link::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Розтягується на всю площу */
+    background-color: #000000; /* Колір рамки */
+    /* Координати точок для зрізу верхнього лівого та нижнього правого кутів на 12px */
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    z-index: -2;
+}
+
+/* ВНУТРІШНІЙ ШАР (Перекриває фон, залишаючи лінію товщиною 1px) */
+.menu__link::after {
+    content: "";
+    position: absolute;
+    inset: 1px; /* Товщина лінії рамки */
+    background: #758053; /* Колір внутрішнього фону (має збігатися з тлом шапки) */
+    /* Внутрішній clip-path зміщений на 1px для компенсації товщини рамки */
+    clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
+    z-index: -1;
+    transition: background 0.25s ease;
+}
+
+/* Ефект Hover (анімація при наведенні курсора) */
+.menu__link:hover {
+    color: #050505; /* Інверсія кольору тексту */
+}
+
+.menu__link:hover::after {
+    background: #92a672; /* Повна заливка елемента кольором */
+}

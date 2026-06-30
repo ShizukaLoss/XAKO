@@ -1,0 +1,18 @@
+body {
+   font-family: "Roboto", sans-serif;
+   font-size: 18px;
+   background-color: #ffffff;
+   color: #000000;
+}
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+   overflow: clip;
+}
+
+[class*="__container"] {
+   max-inline-size: 1310px;
+   margin-inline: auto;
+}
+
