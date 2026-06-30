@@ -1,69 +1,11 @@
 :root {
+   --color-body-bg: #ffffff;
    --color-text: #1a1f22;
    --color-bg: #fafafa;
    --color-primary: #747d58;
-   --color-secondary: #d3be9e;
-   --color-accent: #8a5e42;
-   --color-button-hov: #92a672;
-   --color-h2-text: #4E220F;
+   --color-secondary: #F8F1E4;
+   --color-accent: #987052;
 }
-
-section {
-   margin-bottom: 0;
-}
-.paragraph { 
-   font-size: 1.2rem;
-   font-weight: 600;
-   color: var(--color-accent);
-   margin-bottom: 30px;
-}
-.grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-   gap: 30px;
-}
-/* Cards */
-.card {
-   background-color: var(--color-bg);
-   border: 1px solid rgba(26, 31, 34, 0.1);
-   border-top: 5px solid var(--color-primary);
-   padding: 30px;
-   border-radius: 0 0 8px 8px;
-   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-   transition: transform 0.3s ease;
-}
-
-.card:hover {
-   transform: translateY(-5px);
-   border-top-color: var(--color-accent);
-}
-
-.card h3 {
-   color: var(--color-h2-text);
-   margin-bottom: 15px;
-}
-
-ul.feature-list {
-   list-style: none;
-   padding: 0;
-}
-
-ul.feature-list li {
-   position: relative;
-   padding-left: 25px;
-   margin-bottom: 15px;
-}
-
-ul.feature-list li::before {
-   content: '■';
-   color: var(--color-accent);
-   position: absolute;
-   left: 0;
-   top: 0;
-   font-size: 12px;
-}
-.feature-list { }
-
 
 .products .button {
    display: flex;
@@ -78,10 +20,11 @@ ul.feature-list li::before {
    padding: 16px 32px;
    margin-top: 20px;
    color: var(--color-text);
-   font-weight: 800;
+   font-weight: 700;
    font-size: 16px;
    text-transform: uppercase;
    text-decoration: none;
+   max-height: 50px;
    letter-spacing: 1px;
    /* Колір рамки */
    background-color: var(--color-text);
@@ -109,10 +52,11 @@ ul.feature-list li::before {
 
 .btn-catalog:hover {
    transform: translateY(-2px);
+   color: var(--color-secondary);
 }
 
 .btn-catalog:hover::before {
-   background-color: var(--color-button-hov);
+   background-color: var(--color-text);
 }
 
 .btn-arrow {
@@ -131,4 +75,6 @@ ul.feature-list li::before {
    opacity: 1;
    transform: translateX(0);
    margin-left: 10px;
+   fill: var(--color-secondary);
 }
+

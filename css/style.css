@@ -4,7 +4,7 @@
    --color-bg: #fafafa;
    --color-primary: #747d58;
    --color-secondary: #d3be9e;
-   --color-accent: #8a5e42;
+   --color-accent: #987052;
 }
 
 body {
@@ -30,10 +30,11 @@ body {
 }
 
 .container { 
-   max-width: 1310px;
+   max-width: 1300px;   
    margin: 0 auto;
    padding: 60px 20px;
 }
+
 h1, h2, h3 {
    color: var(--color-text);
    margin-top: 0;

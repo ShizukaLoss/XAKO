@@ -4,7 +4,7 @@
    --color-bg: #fafafa;
    --color-primary: #747d58;
    --color-secondary: #d3be9e;
-   --color-accent: #8a5e42;
+   --color-accent: #987052;
    --color-button-hov: #92a672;
 }
 
@@ -14,7 +14,11 @@
    position: sticky;
    top: 0;
    z-index: 100;
-   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   box-shadow: 0 1px 10px rgb(116, 125, 88);
+}
+
+.header .container {
+   padding: 0;
 }
 
 .logo-container {
@@ -26,21 +30,21 @@
    width: 100%;
    max-inline-size: 100%;
    height: auto;
-   /* filter: invert(1); */
+   color: var(--color-text);
 }
 
 
 
 .header_link {
    position: relative;
-   width: 200px;
+   width: 180px;
    box-sizing: border-box;
    object-fit: cover;
 }
 
 /* Текст під логотипом */
 .logo-subtitle {
-   color: #000000;
+   color: var(--color-text);
    font-size: 9px;
    font-weight: 400;
    letter-spacing: 1px;
@@ -67,6 +71,7 @@
 .header__menu {
    display: flex;
    justify-content: center;
+   padding-right: 20px;
 }
 
 .menu__list{
@@ -89,7 +94,7 @@
    font-weight: 500;
    line-height: 1.5;
    letter-spacing: 0.5px;
-
+   margin-bottom: 10px;
 }
 
 
@@ -102,10 +107,10 @@
    align-items: center;
    justify-content: center;
    padding: 10px 28px;
-   color: #000000;
+   color: #1a1f22;
    text-decoration: none;
    font-family: sans-serif;
-   font-weight: 800;
+   font-weight: 600;
    font-size: 14px;
    letter-spacing: 1px;
    text-transform: uppercase;
@@ -119,7 +124,7 @@
    content: "";
    position: absolute;
    inset: 0; /* Розтягується на всю площу */
-   background-color: #000000; /* Колір рамки */
+   background-color: var(--color-text); /* Колір рамки */
    /* Координати точок для зрізу верхнього лівого та нижнього правого кутів на 12px */
    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
    z-index: -2;
@@ -129,8 +134,8 @@
 .menu__link::after {
    content: "";
    position: absolute;
-   inset: 2px; /* Товщина лінії рамки */
-   background: var(--color-primary); /* Колір внутрішнього фону (має збігатися з тлом шапки) */
+   inset: 1.5px; /* Товщина лінії рамки */
+   background:  var(--color-primary); /* Колір внутрішнього фону (має збігатися з тлом шапки) */
    /* Внутрішній clip-path зміщений на 1px для компенсації товщини рамки */
    clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
    z-index: -1;
@@ -139,9 +144,9 @@
 
 /* Ефект Hover (анімація при наведенні курсора) */
 .menu__link:hover {
-   color: var(--color-text); /* Інверсія кольору тексту */
+   color: var(--color-secondary); /* Інверсія кольору тексту */
 }
 
 .menu__link:hover::after {
-   background: var(--color-button-hov); /* Повна заливка елемента кольором */
+   background: var(--color-text); /* Повна заливка елемента кольором */
 }

@@ -1,0 +1,84 @@
+:root {
+   --color-body-bg: #ffffff;
+   --color-text: #1a1f22;
+   --color-bg: #fafafa;
+   --color-primary: #747d58;
+   --color-secondary: #F8F1E4;
+   --color-accent: #987052;
+}
+
+.advantages-panel {
+   display: grid;
+   /* Адаптивна сітка, яка розподіляє елементи. minmax(220px) гарантує, що блоки не будуть занадто вузькими */
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: 25px;
+}
+
+.advantages-container {
+   display: flex;
+   justify-content: space-between;
+   gap: 10px;
+}
+
+.adv-item {
+   display: flex;
+   align-items: start;
+   gap: 15px;
+   max-width: 300px;
+}
+
+.adv-item-container {
+   padding: 20px 5px 5px 5px;
+   border: 1px solid rgba(0,0,0,0.05);
+   border-radius: 12px;
+   background-color: var(--color-bg);
+   transition: transform 0.2s ease;
+}
+
+.adv-item-container:hover {
+   transform: translateY(-2px);
+}
+
+.adv-icon {
+   flex-shrink: 0;
+   width: 44px;
+   height: 44px;
+   /* Використання кольору secondary з прозорістю для фону іконки */
+   background-color: var(--color-secondary);
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--color-text);
+}
+
+.adv-icon svg {
+   width: 22px;
+   height: 22px;
+   fill: none;
+   stroke: currentColor;
+   stroke-width: 2;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+}
+
+.adv-content {
+   display: flex;
+   flex-direction: column;
+}
+
+.adv-content h4 {
+   margin: 0 0 8px 0;
+   font-size: 15px;
+   color: var(--color-text);
+   font-weight: 700;
+   line-height: 1.2;
+}
+
+.adv-content p {
+   margin: 0;
+   font-size: 12px;
+   color: var(--color-text);
+   opacity: 0.75;
+   line-height: 1.5;
+}
