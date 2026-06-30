@@ -1,0 +1,134 @@
+:root {
+   --color-text: #1a1f22;
+   --color-bg: #fafafa;
+   --color-primary: #747d58;
+   --color-secondary: #d3be9e;
+   --color-accent: #8a5e42;
+   --color-button-hov: #92a672;
+   --color-h2-text: #4E220F;
+}
+
+section {
+   margin-bottom: 0;
+}
+.paragraph { 
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: var(--color-accent);
+   margin-bottom: 30px;
+}
+.grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+   gap: 30px;
+}
+/* Cards */
+.card {
+   background-color: var(--color-bg);
+   border: 1px solid rgba(26, 31, 34, 0.1);
+   border-top: 5px solid var(--color-primary);
+   padding: 30px;
+   border-radius: 0 0 8px 8px;
+   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+   transition: transform 0.3s ease;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+   border-top-color: var(--color-accent);
+}
+
+.card h3 {
+   color: var(--color-h2-text);
+   margin-bottom: 15px;
+}
+
+ul.feature-list {
+   list-style: none;
+   padding: 0;
+}
+
+ul.feature-list li {
+   position: relative;
+   padding-left: 25px;
+   margin-bottom: 15px;
+}
+
+ul.feature-list li::before {
+   content: '■';
+   color: var(--color-accent);
+   position: absolute;
+   left: 0;
+   top: 0;
+   font-size: 12px;
+}
+.feature-list { }
+
+
+.products .button {
+   display: flex;
+   justify-content: center;
+}
+
+.btn-catalog {
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 16px 32px;
+   margin-top: 20px;
+   color: var(--color-text);
+   font-weight: 800;
+   font-size: 16px;
+   text-transform: uppercase;
+   text-decoration: none;
+   letter-spacing: 1px;
+   /* Колір рамки */
+   background-color: var(--color-text);
+   /* Зрізані кути (лівий верхній, правий нижній) */
+   clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+   transition: transform 0.2s ease;
+   z-index: 1;
+}
+
+.btn-catalog::before {
+   content: '';
+   position: absolute;
+   /* Товщина рамки */
+   top: 2px;
+   left: 2px;
+   right: 2px;
+   bottom: 2px;
+   /* Колір фону всередині кнопки */
+   background-color: var(--color-primary);
+   /* Внутрішній контур зрізу */
+   clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 0 100%, 0 13px);
+   z-index: -1;
+   transition: background-color 0.2s ease;
+}
+
+.btn-catalog:hover {
+   transform: translateY(-2px);
+}
+
+.btn-catalog:hover::before {
+   background-color: var(--color-button-hov);
+}
+
+.btn-arrow {
+   display: inline-block;
+   max-width: 0;
+   opacity: 0;
+   transform: translateX(-15px);
+   transition: all 0.3s ease;
+   white-space: nowrap;
+   margin-left: 0;
+   font-size: 18px;
+}
+
+.btn-catalog:hover .btn-arrow {
+   max-width: 20px;
+   opacity: 1;
+   transform: translateX(0);
+   margin-left: 10px;
+}

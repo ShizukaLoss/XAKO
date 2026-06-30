@@ -1,6 +1,20 @@
+:root {
+   --color-body-bg: #ffffff;
+   --color-text: #1a1f22;
+   --color-bg: #fafafa;
+   --color-primary: #747d58;
+   --color-secondary: #d3be9e;
+   --color-accent: #8a5e42;
+   --color-button-hov: #92a672;
+}
+
 .header {
-   padding: 5px 0 5px 0;
-   background-color: #758053;
+   padding: 5px 0 0 0;
+   background-color: var(--color-primary);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo-container {
@@ -19,7 +33,7 @@
 
 .header_link {
    position: relative;
-   width: 250px;
+   width: 200px;
    box-sizing: border-box;
    object-fit: cover;
 }
@@ -27,7 +41,7 @@
 /* Текст під логотипом */
 .logo-subtitle {
    color: #000000;
-   font-size: 12px;
+   font-size: 9px;
    font-weight: 400;
    letter-spacing: 1px;
    font-family: "Rubik Glitch", system-ui;
@@ -83,50 +97,51 @@
 
 /* Базові стилі пункту меню */
 .menu__link {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 28px;
-    color: #000000;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: transparent;
-    z-index: 1;
-    transition: color 0.25s ease;
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px 28px;
+   color: #000000;
+   text-decoration: none;
+   font-family: sans-serif;
+   font-weight: 800;
+   font-size: 14px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   background: transparent;
+   z-index: 1;
+   transition: color 0.25s ease;
 }
 
 /* ЗОВНІШНІЙ ШАР (Створює білу рамку) */
 .menu__link::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* Розтягується на всю площу */
-    background-color: #000000; /* Колір рамки */
-    /* Координати точок для зрізу верхнього лівого та нижнього правого кутів на 12px */
-    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
-    z-index: -2;
+   content: "";
+   position: absolute;
+   inset: 0; /* Розтягується на всю площу */
+   background-color: #000000; /* Колір рамки */
+   /* Координати точок для зрізу верхнього лівого та нижнього правого кутів на 12px */
+   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+   z-index: -2;
 }
 
 /* ВНУТРІШНІЙ ШАР (Перекриває фон, залишаючи лінію товщиною 1px) */
 .menu__link::after {
-    content: "";
-    position: absolute;
-    inset: 1px; /* Товщина лінії рамки */
-    background: #758053; /* Колір внутрішнього фону (має збігатися з тлом шапки) */
-    /* Внутрішній clip-path зміщений на 1px для компенсації товщини рамки */
-    clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
-    z-index: -1;
-    transition: background 0.25s ease;
+   content: "";
+   position: absolute;
+   inset: 2px; /* Товщина лінії рамки */
+   background: var(--color-primary); /* Колір внутрішнього фону (має збігатися з тлом шапки) */
+   /* Внутрішній clip-path зміщений на 1px для компенсації товщини рамки */
+   clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
+   z-index: -1;
+   transition: background 0.25s ease;
 }
 
 /* Ефект Hover (анімація при наведенні курсора) */
 .menu__link:hover {
-    color: #050505; /* Інверсія кольору тексту */
+   color: var(--color-text); /* Інверсія кольору тексту */
 }
 
 .menu__link:hover::after {
-    background: #92a672; /* Повна заливка елемента кольором */
+   background: var(--color-button-hov); /* Повна заливка елемента кольором */
 }
