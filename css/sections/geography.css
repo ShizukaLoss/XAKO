@@ -1,8 +1,6 @@
 .ukraine { 
-   display: flex;
-   gap: 10px;
-   align-items: start;
+   display: inline-block;
 }
 .ukraine svg {
-   transform: translate(0px, 5px);
+   transform: translate(5px, 32px);
 }

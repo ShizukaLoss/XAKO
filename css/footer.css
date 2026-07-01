@@ -1,0 +1,67 @@
+:root {
+   --color-body-bg: #ffffff;
+   --color-text: #1a1f22;
+   --color-bg: #fafafa;
+   --color-primary: #747d58;
+   --color-secondary:  #d3be9e;
+   --color-accent: #987052;
+}
+
+.footer {
+   background-color: var(--color-text);
+   color: var(--color-bg);
+   font-size: 0.95rem;
+}
+
+.footer-container {
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container .container {
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 40px;
+}
+
+.footer-section h4 {
+   color: var(--color-secondary);
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   margin: 0 0 20px 0;
+   letter-spacing: 1px;
+}
+
+.footer-section .contact-item {
+   margin-bottom: 12px;
+}
+
+.footer-section .label {
+   opacity: 0.6;
+   margin-right: 8px;
+   font-size: 0.9rem;
+}
+
+.footer-section a {
+   color: var(--color-bg);
+   text-decoration: none;
+   transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+   color: var(--color-primary);
+}
+
+.footer-section address {
+   font-style: normal;
+   line-height: 1.6;
+   opacity: 0.9;
+}
+
+.footer-bottom {
+   text-align: center;
+   opacity: 0.5;
+   font-size: 0.85rem;
+   padding: 20px 20px;
+}
