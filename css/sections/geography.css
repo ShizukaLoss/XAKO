@@ -1,0 +1,8 @@
+.ukraine { 
+   display: flex;
+   gap: 10px;
+   align-items: start;
+}
+.ukraine svg {
+   transform: translate(0px, 5px);
+}

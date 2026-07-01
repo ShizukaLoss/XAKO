@@ -28,7 +28,7 @@
 }
 
 .adv-item-container {
-   padding: 20px 5px 5px 5px;
+   padding: 15px 5px 5px 5px;
    border: 1px solid rgba(0,0,0,0.05);
    border-radius: 12px;
    background-color: var(--color-bg);
@@ -36,7 +36,7 @@
 }
 
 .adv-item-container:hover {
-   transform: translateY(-2px);
+   transform: translateY(-10px);
 }
 
 .adv-icon {
