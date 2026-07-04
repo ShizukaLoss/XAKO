@@ -4,35 +4,42 @@ section {
    margin-bottom: 0;
    border-bottom: 1px solid rgba(26, 31, 34, 0.08);
 }
-.paragraph { 
+
+.paragraph {
    font-size: 1.2rem;
    font-weight: 600;
    color: var(--color-accent);
    margin-bottom: 30px;
 }
+
 .grid {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
    gap: 30px;
 }
+
 /* Cards */
 .card {
    background-color: var(--color-bg);
-   border: 1px solid rgba(26, 31, 34, 0.1);
+   border: 1px solid rgba(32, 28, 23, 0.08);
    border-top: 5px solid var(--color-primary);
    padding: 30px;
-   border-radius: 0 0 8px 8px;
-   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-   transition: transform 0.3s ease;
+   border-radius: 0 0 10px 10px;
+   box-shadow: 0 6px 18px rgba(32, 28, 23, 0.06);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   position: relative;
+   overflow: hidden;
 }
 
 .card:hover {
-   transform: translateY(-5px);
+   transform: translateY(-6px);
    border-top-color: var(--color-accent);
+   box-shadow: 0 14px 28px rgba(32, 28, 23, 0.12);
 }
 
 .card h3 {
    color: var(--color-h2-text);
+   font-size: 1.2rem;
    margin-bottom: 15px;
 }
 
@@ -51,8 +58,7 @@ ul.feature-list li::before {
    content: '■';
    color: var(--color-accent);
    position: absolute;
-   left: 0;
-   top: 0;
-   font-size: 12px;
+   left: 2px;
+   top: 0px;
+   font-size: 15px;
 }
-
