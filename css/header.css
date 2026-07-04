@@ -6,7 +6,7 @@
    position: sticky;
    top: 0;
    z-index: 100;
-   box-shadow: 0 1px 10px rgb(116, 125, 88);
+   box-shadow: 0 2px 16px rgba(32, 28, 23, 0.18);
 }
 
 .header .container {
