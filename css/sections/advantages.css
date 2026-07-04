@@ -9,45 +9,57 @@
 
 .advantages-container {
    display: flex;
-   justify-content: space-between;
-   gap: 10px;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+}
+
+.adv-item-container {
+   flex: 1 1 220px;
+   max-width: 280px;
 }
 
 .adv-item {
    display: flex;
    align-items: start;
    gap: 15px;
-   max-width: 300px;
 }
 
 .adv-item-container {
-   padding: 15px 5px 5px 5px;
-   border: 1px solid rgba(0,0,0,0.05);
-   border-radius: 12px;
-   background-color: var(--color-bg);
-   transition: transform 0.2s ease;
+   padding: 22px 18px 18px 18px;
+   border: 1px solid rgba(32, 28, 23, 0.07);
+   border-radius: 14px;
+   background-color: var(--color-card-bg);
+   box-shadow: 0 4px 14px rgba(32, 28, 23, 0.05);
+   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .adv-item-container:hover {
-   transform: translateY(-10px);
+   transform: translateY(-8px);
+   box-shadow: 0 16px 26px rgba(32, 28, 23, 0.1);
 }
 
 .adv-icon {
    flex-shrink: 0;
-   width: 44px;
-   height: 44px;
-   /* Використання кольору secondary з прозорістю для фону іконки */
-   background-color: var(--color-adv-img-bg);
-   border-radius: 8px;
+   width: 50px;
+   height: 50px;
+   background: linear-gradient(135deg, var(--color-secondary), #ffffff);
+   border-radius: 10px;
    display: flex;
    align-items: center;
    justify-content: center;
-   color: var(--color-text);
+   color: var(--color-accent);
+   transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.adv-item-container:hover .adv-icon {
+   transform: rotate(-6deg) scale(1.06);
+   color: var(--color-primary);
 }
 
 .adv-icon svg {
-   width: 22px;
-   height: 22px;
+   width: 24px;
+   height: 24px;
    fill: none;
    stroke: currentColor;
    stroke-width: 2;
@@ -62,16 +74,17 @@
 
 .adv-content h4 {
    margin: 0 0 8px 0;
+   font-family: var(--font-heading, sans-serif);
    font-size: 15px;
    color: var(--color-text);
    font-weight: 700;
-   line-height: 1.2;
+   line-height: 1.25;
 }
 
 .adv-content p {
    margin: 0;
-   font-size: 12px;
+   font-size: 13px;
    color: var(--color-text);
-   opacity: 0.75;
-   line-height: 1.5;
+   opacity: 0.72;
+   line-height: 1.55;
 }
