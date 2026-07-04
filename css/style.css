@@ -1,14 +1,21 @@
 @import "colors.css";
 
+:root {
+   --font-heading: "Manrope", sans-serif;
+   --font-body: "Roboto", sans-serif;
+}
+
 body {
    margin: 0;
    padding: 0;
-   font-family: "Roboto", sans-serif;
+   font-family: var(--font-body);
    font-size: 18px;
    background-color: var(--color-body-bg);
+   background-image: radial-gradient(circle at 15% 0%, rgba(111, 120, 80, 0.06), transparent 40%);
    color: var(--color-text);
-   line-height: 1.6;
+   line-height: 1.65;
 }
+
 .wrapper {
    display: flex;
    flex-direction: column;
@@ -22,26 +29,42 @@ body {
    margin-inline: auto;
 }
 
-.container { 
-   max-width: 1300px;   
+.container {
+   max-width: 1300px;
    margin: 0 auto;
    padding: 60px 20px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
    color: var(--color-text);
+   font-family: var(--font-heading);
+   font-weight: 700;
+   letter-spacing: -0.01em;
    margin-top: 0;
 }
 
 h1 {
-   font-size: 2rem;
-   margin-bottom: 10px;
+   font-size: 2.5rem;
+   line-height: 1.15;
+   margin-bottom: 12px;
 }
 
 h2 {
-   font-size: 1.7rem;
-   border-bottom: 3px solid var(--color-accent);
+   font-size: 1.85rem;
+   position: relative;
    display: inline-block;
-   padding-bottom: 10px;
-   margin-bottom: 40px;
+   padding-bottom: 14px;
+   margin-bottom: 44px;
+}
+
+h2::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100px;
+   height: 4px;
+   background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
 }
