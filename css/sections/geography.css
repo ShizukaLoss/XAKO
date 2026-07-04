@@ -1,6 +1,37 @@
-.ukraine { 
-   display: inline-block;
+.geograpy h2 {
+   display: flex;
+   align-items: center;
+   gap: 12px;
 }
+
+.ukraine {
+   display: inline-flex;
+   align-items: center;
+}
+
 .ukraine svg {
-   transform: translate(5px, 32px);
+   border-radius: 3px;
+   box-shadow: 0 0 0 1px rgba(32, 28, 23, 0.12);
+}
+
+.split-layout {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.split-content {
+   flex: 1 1 480px;
+   background-color: var(--color-bg);
+   border-left: 4px solid var(--color-accent);
+   border-radius: 0 14px 14px 0;
+   padding: 26px 30px;
+}
+
+.split-content p {
+   margin: 0 0 14px 0;
+}
+
+.split-content p:last-child {
+   margin-bottom: 0;
 }
