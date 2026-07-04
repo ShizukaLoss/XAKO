@@ -1,7 +1,7 @@
 @import "colors.css";
 
 .header {
-   padding: 5px 0 0 0;
+   padding: 0;
    background-color: var(--color-primary);
    position: sticky;
    top: 0;
@@ -14,7 +14,7 @@
 }
 
 .logo-container {
-   display: grid; 
+   display: grid;
 }
 
 .logo {
@@ -28,16 +28,18 @@
 
 
 .header_link {
+   padding-left: 20px;
    position: relative;
-   width: 180px;
+   width: 300px;
    box-sizing: border-box;
    object-fit: cover;
 }
 
 /* Текст під логотипом */
 .logo-subtitle {
-   color: var(--color-text);
-   font-size: 9px;
+   margin: 0;
+   color: #000;
+   font-size: 15px;
    font-weight: 400;
    letter-spacing: 1px;
    font-family: "Rubik Glitch", system-ui;
@@ -46,13 +48,14 @@
    display: flex;
    align-items: flex-end;
    justify-self: end;
-   transform: translate(-10px, -20px);
+   transform: translate(-22px, -20px);
    text-transform: uppercase;
 }
 
 .logo,
 .logo-subtitle {
-   grid-area: 1 / 1; /* Обидва елементи займають 1-й рядок і 1-у колонку */
+   grid-area: 1 / 1;
+   /* Обидва елементи займають 1-й рядок і 1-у колонку */
 }
 
 .header__body {
@@ -66,7 +69,7 @@
    padding-right: 20px;
 }
 
-.menu__list{
+.menu__list {
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -81,29 +84,19 @@
    max-height: fit-content;
 }
 
-.menu__link { 
-   font-size: 16px;
-   font-weight: 500;
-   line-height: 1.5;
-   letter-spacing: 0.5px;
-   margin-bottom: 10px;
-}
-
-
-
-
-/* Базові стилі пункту меню */
 .menu__link {
+   width: 180px;
    position: relative;
    display: inline-flex;
    align-items: center;
    justify-content: center;
-   padding: 10px 28px;
+   padding: 15px 0px;
    color: #1a1f22;
    text-decoration: none;
    font-family: sans-serif;
+   line-height: 1.5;
    font-weight: 600;
-   font-size: 14px;
+   font-size: 15px;
    letter-spacing: 1px;
    text-transform: uppercase;
    background: transparent;
@@ -115,8 +108,10 @@
 .menu__link::before {
    content: "";
    position: absolute;
-   inset: 0; /* Розтягується на всю площу */
-   background-color: var(--color-text); /* Колір рамки */
+   inset: 0;
+   /* Розтягується на всю площу */
+   background-color: var(--color-text);
+   /* Колір рамки */
    /* Координати точок для зрізу верхнього лівого та нижнього правого кутів на 12px */
    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
    z-index: -2;
@@ -126,8 +121,8 @@
 .menu__link::after {
    content: "";
    position: absolute;
-   inset: 1.5px; /* Товщина лінії рамки */
-   background:  var(--color-primary); /* Колір внутрішнього фону (має збігатися з тлом шапки) */
+   inset: 2px; /* Товщина лінії рамки */
+   background: var(--color-button-bg); /* Колір внутрішнього фону (має збігатися з тлом шапки) */
    /* Внутрішній clip-path зміщений на 1px для компенсації товщини рамки */
    clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
    z-index: -1;
@@ -136,9 +131,11 @@
 
 /* Ефект Hover (анімація при наведенні курсора) */
 .menu__link:hover {
-   color: var(--color-secondary); /* Інверсія кольору тексту */
+   color: var(--color-secondary);
+   /* Інверсія кольору тексту */
 }
 
 .menu__link:hover::after {
-   background: var(--color-text); /* Повна заливка елемента кольором */
+   background: var(--color-text);
+   /* Повна заливка елемента кольором */
 }

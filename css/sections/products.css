@@ -36,7 +36,7 @@
    right: 2px;
    bottom: 2px;
    /* Колір фону всередині кнопки */
-   background-color: var(--color-primary);
+   background-color: var(--color-button-bg);
    /* Внутрішній контур зрізу */
    clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 0 100%, 0 13px);
    z-index: -1;
