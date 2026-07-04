@@ -1,11 +1,4 @@
-:root {
-   --color-body-bg: #ffffff;
-   --color-text: #1a1f22;
-   --color-bg: #fafafa;
-   --color-primary: #747d58;
-   --color-secondary: #F8F1E4;
-   --color-accent: #987052;
-}
+@import "colors.css";
 
 .products .button {
    display: flex;

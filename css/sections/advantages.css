@@ -1,11 +1,4 @@
-:root {
-   --color-body-bg: #ffffff;
-   --color-text: #1a1f22;
-   --color-bg: #fafafa;
-   --color-primary: #747d58;
-   --color-secondary: #F8F1E4;
-   --color-accent: #987052;
-}
+@import "colors.css";
 
 .advantages-panel {
    display: grid;
@@ -44,7 +37,7 @@
    width: 44px;
    height: 44px;
    /* Використання кольору secondary з прозорістю для фону іконки */
-   background-color: var(--color-secondary);
+   background-color: var(--color-adv-img-bg);
    border-radius: 8px;
    display: flex;
    align-items: center;

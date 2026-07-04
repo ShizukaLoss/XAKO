@@ -1,12 +1,4 @@
-:root {
-   --color-body-bg: #ffffff;
-   --color-text: #1a1f22;
-   --color-bg: #fafafa;
-   --color-primary: #747d58;
-   --color-secondary: #d3be9e;
-   --color-accent: #987052;
-   --color-button-hov: #92a672;
-}
+@import "colors.css";
 
 .header {
    padding: 5px 0 0 0;
