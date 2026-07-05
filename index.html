@@ -5,7 +5,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/colors.css">
-   <link rel="stylesheet" href="css/banner.css">
+
+   <link rel="stylesheet" href="css/banner/intro.css">
+   <link rel="stylesheet" href="css/banner/dots.css">
+
+
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/header.css">
@@ -24,294 +28,313 @@
 
 <body>
    <div class="intro-overlay" id="introOverlay">
-      <div class="intro-overlay__slide is-active" style="background-image:url('images/banner/Gas_Pistol.png')"></div>
-      <div class="intro-overlay__slide" style="background-image:url('images/banner/Cars.png')"></div>
-      <div class="intro-overlay__slide" style="background-image:url('images/banner/Station.png')"></div>
-      <div class="intro-overlay__slide" style="background-image:url('images/banner/Fuel_pumps.png')"></div>
+      <div class="intro-overlay" id="introOverlay">
+         <div class="intro-overlay__slide is-active">
+            <div class="intro-overlay__slide-bg zoom-1"
+               style="background-image:url('images/banner/Gas_pistol.png'); transform-origin: 75% 60%;">
+            </div>
+         </div>
+         <div class="intro-overlay__slide">
+            <div class="intro-overlay__slide-bg zoom-2"
+               style="background-image:url('images/banner/Cars.png'); transform-origin: 35% 55%;">
+            </div>
+         </div>
+         <div class="intro-overlay__slide">
+            <div class="intro-overlay__slide-bg zoom-3"
+               style="background-image:url('images/banner/Station.png'); transform-origin: 70% 40%;">
+            </div>
+         </div>
+         <div class="intro-overlay__slide">
+            <div class="intro-overlay__slide-bg zoom-4"
+               style="background-image:url('images/banner/Fuel_pumps.png'); transform-origin: 25% 50%;">
+            </div>
+         </div>
 
-      <div class="intro-overlay__dim"></div>
+         <div class="intro-overlay__dim"></div>
 
-      <div class="intro-overlay__content">
+         <div class="intro-overlay__content">
+         </div>
+
+         <div class="intro-overlay__dots" id="introDots">
+            <button type="button" class="is-active" aria-label="Слайд 1"></button>
+            <button type="button" aria-label="Слайд 2"></button>
+            <button type="button" aria-label="Слайд 3"></button>
+            <button type="button" aria-label="Слайд 4"></button>
+         </div>
       </div>
 
-      <div class="intro-overlay__dots" id="introDots">
-         <button type="button" class="is-active" aria-label="Слайд 1"></button>
-         <button type="button" aria-label="Слайд 2"></button>
-         <button type="button" aria-label="Слайд 3"></button>
-         <button type="button" aria-label="Слайд 4"></button>
-      </div>
-   </div>
+
+      <div class="wrapper">
+         <header class="header">
+            <div class="container">
+
+               <div class="header__body">
+                  <div class="logo-container">
+                     <a href="" class="header_link">
+                        <img src="logo/Logo.svg" alt="" class="logo">
+                        <p class="logo-subtitle">Обладнання для АЗС</p>
+                     </a>
+                  </div>
 
 
-   <div class="wrapper">
-      <header class="header">
-         <div class="container">
+                  <nav class="header__menu">
+                     <ul class="menu__list">
+                        <li class="menu__item">
+                           <a href="#" class="menu__link">Каталог</a>
+                        </li>
+                        <li class="menu__item">
+                           <a href="#" class="menu__link">Інструкції</a>
+                        </li>
+                        <li class="menu__item">
+                           <a href="#" class="menu__link">Контакти</a>
+                        </li>
+                     </ul>
+                  </nav>
 
-            <div class="header__body">
-               <div class="logo-container">
-                  <a href="" class="header_link">
-                     <img src="logo/Logo.svg" alt="" class="logo">
-                     <p class="logo-subtitle">Обладнання для АЗС</p>
+               </div>
+
+            </div>
+         </header>
+
+         <!-- Hero Section -->
+         <section class="hero" id="about">
+            <div class="container">
+               <h1>ТОВ «НПФ «ХАКО»</h1>
+               <p class="paragraph">Працюємо на ринку електронного обладнання з 2001 року.</p>
+
+               <div class="grid">
+                  <div class="card">
+                     <h3>Основні напрямки діяльності</h3>
+                     <ul class="feature-list">
+                        <li>Виготовлення електронного обладнання для виробництва та модернізації паливороздавальних
+                           колонок
+                           (ПРК).</li>
+                        <li>Розробка програмного забезпечення для контролерів ПРК власного виробництва.</li>
+                     </ul>
+                  </div>
+                  <div class="card">
+                     <h3>Виробнича база та сертифікація</h3>
+                     <ul class="feature-list">
+                        <li>
+                           Ми маємо власну виробничу базу в м. Києві, що дозволяє задовольняти попит і забезпечувати
+                           гарантійне обслуговування.
+                        </li>
+                        <li>
+                           Наші пристрої сертифіковані на вибухозахист, мають дозвіл «Держнаглядохоронпраці» та занесені
+                           до
+                           Державного реєстру засобів вимірювальної техніки України.
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Products Section -->
+         <section class="products" id="catalog">
+            <div class="container">
+               <h2>Номенклатура виробів</h2>
+               <p>Ми виготовляємо обладнання, що дозволяє оснастити ПРК будь-якого типу повною системою управління.
+                  Пристрої сумісні з усіма існуючими в Україні спеціалізованими контрольно-касовими системами.
+               </p>
+               <div class="grid">
+                  <div class="card">
+                     <h3>Датчики та Контролери</h3>
+                     <ul class="feature-list">
+                        <li>Імпульсні датчики витрати палива.</li>
+                        <li>Контролери управління ПРК (від 1 до 5 паливних кранів).</li>
+                     </ul>
+                  </div>
+                  <div class="card">
+                     <h3>Індикація та Адаптери</h3>
+                     <ul class="feature-list">
+                        <li>Пристрої індикації (трирядкові та однорядкові дисплеї) для ПРК.</li>
+                        <li>Адаптери для підключення дисплеїв інших виробників ПРК.</li>
+                     </ul>
+                  </div>
+                  <div class="card">
+                     <h3>Керування</h3>
+                     <ul class="feature-list">
+                        <li>Засоби керування двигунами (електронний пускач) ПРК.</li>
+                        <li>Системи управління (пульти) для управління ПРК.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="button">
+                  <a href="#catalog" class="btn-catalog">
+                     <span class="btn-text">Перейти до каталогу</span>
+                     <span class="btn-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none"
+                           stroke="currentColor" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="miter">
+                           <path d="M3 12h18m-7-7 7 7-7 7" />
+                        </svg>
+                     </span>
                   </a>
                </div>
 
-
-               <nav class="header__menu">
-                  <ul class="menu__list">
-                     <li class="menu__item">
-                        <a href="#" class="menu__link">Каталог</a>
-                     </li>
-                     <li class="menu__item">
-                        <a href="#" class="menu__link">Інструкції</a>
-                     </li>
-                     <li class="menu__item">
-                        <a href="#" class="menu__link">Контакти</a>
-                     </li>
-                  </ul>
-               </nav>
-
             </div>
+         </section>
 
-         </div>
-      </header>
-
-      <!-- Hero Section -->
-      <section class="hero" id="about">
-         <div class="container">
-            <h1>ТОВ «НПФ «ХАКО»</h1>
-            <p class="paragraph">Працюємо на ринку електронного обладнання з 2001 року.</p>
-
-            <div class="grid">
-               <div class="card">
-                  <h3>Основні напрямки діяльності</h3>
-                  <ul class="feature-list">
-                     <li>Виготовлення електронного обладнання для виробництва та модернізації паливороздавальних колонок
-                        (ПРК).</li>
-                     <li>Розробка програмного забезпечення для контролерів ПРК власного виробництва.</li>
-                  </ul>
-               </div>
-               <div class="card">
-                  <h3>Виробнича база та сертифікація</h3>
-                  <ul class="feature-list">
-                     <li>
-                        Ми маємо власну виробничу базу в м. Києві, що дозволяє задовольняти попит і забезпечувати
-                        гарантійне обслуговування.
-                     </li>
-                     <li>
-                        Наші пристрої сертифіковані на вибухозахист, мають дозвіл «Держнаглядохоронпраці» та занесені до
-                        Державного реєстру засобів вимірювальної техніки України.
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <!-- Products Section -->
-      <section class="products" id="catalog">
-         <div class="container">
-            <h2>Номенклатура виробів</h2>
-            <p>Ми виготовляємо обладнання, що дозволяє оснастити ПРК будь-якого типу повною системою управління.
-               Пристрої сумісні з усіма існуючими в Україні спеціалізованими контрольно-касовими системами.
-            </p>
-            <div class="grid">
-               <div class="card">
-                  <h3>Датчики та Контролери</h3>
-                  <ul class="feature-list">
-                     <li>Імпульсні датчики витрати палива.</li>
-                     <li>Контролери управління ПРК (від 1 до 5 паливних кранів).</li>
-                  </ul>
-               </div>
-               <div class="card">
-                  <h3>Індикація та Адаптери</h3>
-                  <ul class="feature-list">
-                     <li>Пристрої індикації (трирядкові та однорядкові дисплеї) для ПРК.</li>
-                     <li>Адаптери для підключення дисплеїв інших виробників ПРК.</li>
-                  </ul>
-               </div>
-               <div class="card">
-                  <h3>Керування</h3>
-                  <ul class="feature-list">
-                     <li>Засоби керування двигунами (електронний пускач) ПРК.</li>
-                     <li>Системи управління (пульти) для управління ПРК.</li>
-                  </ul>
-               </div>
-            </div>
-
-            <div class="button">
-               <a href="#catalog" class="btn-catalog">
-                  <span class="btn-text">Перейти до каталогу</span>
-                  <span class="btn-arrow">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none"
-                        stroke="currentColor" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="miter">
-                        <path d="M3 12h18m-7-7 7 7-7 7" />
-                     </svg>
-                  </span>
-               </a>
-            </div>
-
-         </div>
-      </section>
-
-      <!-- Advantages Section -->
-      <section class="advantages-panel" id="advantages">
-         <div class="container">
-            <h2>Переваги роботи з нами</h2>
-            <div class="advantages-container">
-               <div class="adv-item-container">
-                  <div class="adv-item">
-                     <div class="adv-icon">
-                        <svg viewBox="0 0 24 24">
-                           <path
-                              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                           </path>
-                        </svg>
-                     </div>
-                     <div class="adv-content">
-                        <h4>Самостійне обслуговування</h4>
-                        <p>Конструкція та ПЗ дозволяють клієнтам самостійно встановлювати та обслуговувати
-                           ПРК.</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="adv-item-container">
-                  <div class="adv-item">
-                     <div class="adv-icon">
-                        <svg viewBox="0 0 24 24">
-                           <line x1="4" y1="21" x2="4" y2="14"></line>
-                           <line x1="4" y1="10" x2="4" y2="3"></line>
-                           <line x1="12" y1="21" x2="12" y2="12"></line>
-                           <line x1="12" y1="8" x2="12" y2="3"></line>
-                           <line x1="20" y1="21" x2="20" y2="16"></line>
-                           <line x1="20" y1="12" x2="20" y2="3"></line>
-                           <line x1="1" y1="14" x2="7" y2="14"></line>
-                           <line x1="9" y1="8" x2="15" y2="8"></line>
-                           <line x1="17" y1="16" x2="23" y2="16"></line>
-                        </svg>
-                     </div>
-                     <div class="adv-content">
-                        <h4>Гнучка адаптація</h4>
-                        <p>Налаштування програмного забезпечення під конкретного замовника.</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="adv-item-container">
-                  <div class="adv-item">
-                     <div class="adv-icon">
-                        <svg viewBox="0 0 24 24">
-                           <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                           <polyline points="2 17 12 22 22 17"></polyline>
-                           <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                     </div>
-                     <div class="adv-content">
-                        <h4>Власне виробництво</h4>
-                        <p>Наявність власних виробничих потужностей у м. Києві.</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="adv-item-container">
-                  <div class="adv-item">
-                     <div class="adv-icon">
-                        <svg viewBox="0 0 24 24">
-                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                     </div>
-                     <div class="adv-content">
-                        <h4>Обслуговування</h4>
-                        <p>Повний спектр гарантійного та післягарантійного обслуговування.</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="adv-item-container">
-                  <div class="adv-item">
-                     <div class="adv-icon">
-                        <svg viewBox="0 0 24 24">
-                           <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                           </path>
-                           <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                        </svg>
-                     </div>
-                     <div class="adv-content">
-                        <h4>Цінова політика</h4>
-                        <p>Конкурентні ціни на всю продукцію.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-         </div>
-      </section>
-
-      <!-- Geograpy -->
-      <section class="geograpy" id="coverage">
-         <div class="container">
-            <h2>Ми працюємо по всій Україні
-               <div class="ukraine">
-                  <svg xmlns="http://w3.org" viewBox="0 0 30px 20px" width="30px" height="20px">
-                     <rect fill="#005BBB" width="30px" height="10px" />
-                     <rect fill="#FFD500" y="10" width="30px" height="10px" />
-                  </svg>
-                  <h3></h3>
-               </div>
-            </h2>
-
-
-            <div class="split-layout">
-               <div class="split-header">
-
-
-
-               </div>
-               <div class="split-content">
-                  <p>Нашим обладнанням оснащені ПРК на багатьох АЗС у всіх регіонах держави.</p>
-                  <p><strong>Гарантійне та післягарантійне обслуговування, а також оперативний ремонт і модернізація
-                        обладнання здійснюються нашими спеціалістами по всій території України.</strong>
-                  </p>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <footer id="contacts" class="footer">
-         <div class="footer-container">
+         <!-- Advantages Section -->
+         <section class="advantages-panel" id="advantages">
             <div class="container">
-               <div class="footer-section">
-                  <h4>Контакти</h4>
-                  <div class="contact-item">
-                     <span class="label">Моб. тел.:</span>
-                     <a href="tel:+380664003711">(066) 400-37-11</a>,
-                     <a href="tel:+380679655943">(067) 965-59-43</a>
+               <h2>Переваги роботи з нами</h2>
+               <div class="advantages-container">
+                  <div class="adv-item-container">
+                     <div class="adv-item">
+                        <div class="adv-icon">
+                           <svg viewBox="0 0 24 24">
+                              <path
+                                 d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                              </path>
+                           </svg>
+                        </div>
+                        <div class="adv-content">
+                           <h4>Самостійне обслуговування</h4>
+                           <p>Конструкція та ПЗ дозволяють клієнтам самостійно встановлювати та обслуговувати
+                              ПРК.</p>
+                        </div>
+                     </div>
                   </div>
-                  <div class="contact-item">
-                     <span class="label">E-mail:</span>
-                     <a href="mailto:hakoltd@ukr.net">hakoltd@ukr.net</a>
+
+                  <div class="adv-item-container">
+                     <div class="adv-item">
+                        <div class="adv-icon">
+                           <svg viewBox="0 0 24 24">
+                              <line x1="4" y1="21" x2="4" y2="14"></line>
+                              <line x1="4" y1="10" x2="4" y2="3"></line>
+                              <line x1="12" y1="21" x2="12" y2="12"></line>
+                              <line x1="12" y1="8" x2="12" y2="3"></line>
+                              <line x1="20" y1="21" x2="20" y2="16"></line>
+                              <line x1="20" y1="12" x2="20" y2="3"></line>
+                              <line x1="1" y1="14" x2="7" y2="14"></line>
+                              <line x1="9" y1="8" x2="15" y2="8"></line>
+                              <line x1="17" y1="16" x2="23" y2="16"></line>
+                           </svg>
+                        </div>
+                        <div class="adv-content">
+                           <h4>Гнучка адаптація</h4>
+                           <p>Налаштування програмного забезпечення під конкретного замовника.</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="adv-item-container">
+                     <div class="adv-item">
+                        <div class="adv-icon">
+                           <svg viewBox="0 0 24 24">
+                              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                              <polyline points="2 17 12 22 22 17"></polyline>
+                              <polyline points="2 12 12 17 22 12"></polyline>
+                           </svg>
+                        </div>
+                        <div class="adv-content">
+                           <h4>Власне виробництво</h4>
+                           <p>Наявність власних виробничих потужностей у м. Києві.</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="adv-item-container">
+                     <div class="adv-item">
+                        <div class="adv-icon">
+                           <svg viewBox="0 0 24 24">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                           </svg>
+                        </div>
+                        <div class="adv-content">
+                           <h4>Обслуговування</h4>
+                           <p>Повний спектр гарантійного та післягарантійного обслуговування.</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="adv-item-container">
+                     <div class="adv-item">
+                        <div class="adv-icon">
+                           <svg viewBox="0 0 24 24">
+                              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                              </path>
+                              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                           </svg>
+                        </div>
+                        <div class="adv-content">
+                           <h4>Цінова політика</h4>
+                           <p>Конкурентні ціни на всю продукцію.</p>
+                        </div>
+                     </div>
                   </div>
                </div>
 
-               <div class="footer-section">
-                  <h4>Адреса</h4>
-                  <address>
-                     м. Київ,<br>
-                     пр-кт Червоної Калини, 15
-                  </address>
+            </div>
+         </section>
+
+         <!-- Geograpy -->
+         <section class="geograpy" id="coverage">
+            <div class="container">
+               <h2>Ми працюємо по всій Україні
+                  <div class="ukraine">
+                     <svg xmlns="http://w3.org" viewBox="0 0 30px 20px" width="30px" height="20px">
+                        <rect fill="#005BBB" width="30px" height="10px" />
+                        <rect fill="#FFD500" y="10" width="30px" height="10px" />
+                     </svg>
+                     <h3></h3>
+                  </div>
+               </h2>
+
+
+               <div class="split-layout">
+                  <div class="split-header">
+
+
+
+                  </div>
+                  <div class="split-content">
+                     <p>Нашим обладнанням оснащені ПРК на багатьох АЗС у всіх регіонах держави.</p>
+                     <p><strong>Гарантійне та післягарантійне обслуговування, а також оперативний ремонт і модернізація
+                           обладнання здійснюються нашими спеціалістами по всій території України.</strong>
+                     </p>
+                  </div>
                </div>
             </div>
-         </div>
+         </section>
+
+         <footer id="contacts" class="footer">
+            <div class="footer-container">
+               <div class="container">
+                  <div class="footer-section">
+                     <h4>Контакти</h4>
+                     <div class="contact-item">
+                        <span class="label">Моб. тел.:</span>
+                        <a href="tel:+380664003711">(066) 400-37-11</a>,
+                        <a href="tel:+380679655943">(067) 965-59-43</a>
+                     </div>
+                     <div class="contact-item">
+                        <span class="label">E-mail:</span>
+                        <a href="mailto:hakoltd@ukr.net">hakoltd@ukr.net</a>
+                     </div>
+                  </div>
+
+                  <div class="footer-section">
+                     <h4>Адреса</h4>
+                     <address>
+                        м. Київ,<br>
+                        пр-кт Червоної Калини, 15
+                     </address>
+                  </div>
+               </div>
+            </div>
 
 
-         <div class="footer-bottom">
-            &copy; 2001-2026 ТОВ «НПФ «ХАКО». Всі права захищено.
-         </div>
-      </footer>
+            <div class="footer-bottom">
+               &copy; 2001-2026 ТОВ «НПФ «ХАКО». Всі права захищено.
+            </div>
+         </footer>
 
-   </div>
+      </div>
 
-   <script src="js/banner.js"></script>
+      <script src="js/banner.js"></script>
 </body>
 
 </html>
