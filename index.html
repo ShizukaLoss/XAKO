@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/colors.css">
+   <link rel="stylesheet" href="css/banner.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/header.css">
@@ -22,6 +23,26 @@
 </head>
 
 <body>
+   <div class="intro-overlay" id="introOverlay">
+      <div class="intro-overlay__slide is-active" style="background-image:url('images/banner/Gas_Pistol.png')"></div>
+      <div class="intro-overlay__slide" style="background-image:url('images/banner/Cars.png')"></div>
+      <div class="intro-overlay__slide" style="background-image:url('images/banner/Station.png')"></div>
+      <div class="intro-overlay__slide" style="background-image:url('images/banner/Fuel_pumps.png')"></div>
+
+      <div class="intro-overlay__dim"></div>
+
+      <div class="intro-overlay__content">
+      </div>
+
+      <div class="intro-overlay__dots" id="introDots">
+         <button type="button" class="is-active" aria-label="Слайд 1"></button>
+         <button type="button" aria-label="Слайд 2"></button>
+         <button type="button" aria-label="Слайд 3"></button>
+         <button type="button" aria-label="Слайд 4"></button>
+      </div>
+   </div>
+
+
    <div class="wrapper">
       <header class="header">
          <div class="container">
@@ -289,6 +310,8 @@
       </footer>
 
    </div>
+
+   <script src="js/banner.js"></script>
 </body>
 
 </html>
