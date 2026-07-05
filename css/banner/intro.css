@@ -12,6 +12,69 @@
    background: #000;
 }
 
+.intro-overlay__content {
+   position: relative;
+   z-index: 3;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: #fff;
+   padding: 20px;
+}
+
+.intro-overlay__inner {
+   max-width: 720px;
+}
+
+.intro-overlay__logo {
+   height: 56px;
+   margin-bottom: 28px;
+   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .4));
+}
+
+.intro-overlay__title {
+   font-size: 46px;
+   font-weight: 800;
+   line-height: 1.2;
+   text-transform: uppercase;
+   letter-spacing: .5px;
+   margin-bottom: 18px;
+   color: #fff;
+   text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+
+.intro-overlay__subtitle {
+   font-size: 18px;
+   color: #e9e6da;
+   /* тёплый светлый оттенок, перекликается с кремовыми карточками сайта */
+   margin-bottom: 30px;
+   opacity: .95;
+}
+
+.intro-overlay__badges {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 12px;
+}
+
+.intro-overlay__badges span {
+   position: relative;
+   padding: 10px 20px;
+   font-size: 13px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: .5px;
+   color: #fff;
+   background-color: rgba(255, 255, 255, .12);
+   border: 1px solid rgba(255, 255, 255, .4);
+   backdrop-filter: blur(2px);
+   /* тот же стиль резаных углов, что и у кнопок сайта */
+   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
 /* Затемнение поверх картинок для читаемости текста */
 .intro-overlay__dim {
    position: absolute;
@@ -39,59 +102,106 @@
 
 /* Внутренний слой с картинкой — именно он анимируется (зум) */
 .intro-overlay__slide-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: scale(1);
-  will-change: transform;
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   transform: scale(1);
+   will-change: transform;
 }
 
 /* Каждому слайду — своя анимация с несколькими точками зума */
 .intro-overlay__slide.is-active .intro-overlay__slide-bg.zoom-1 {
-  animation: jerky-zoom-1 3s ease-in-out forwards;
+   animation: jerky-zoom-1 3s ease-in-out forwards;
 }
+
 .intro-overlay__slide.is-active .intro-overlay__slide-bg.zoom-2 {
-  animation: jerky-zoom-2 3s ease-in-out forwards;
+   animation: jerky-zoom-2 3s ease-in-out forwards;
 }
+
 .intro-overlay__slide.is-active .intro-overlay__slide-bg.zoom-3 {
-  animation: jerky-zoom-3 3s ease-in-out forwards;
+   animation: jerky-zoom-3 3s ease-in-out forwards;
 }
+
 .intro-overlay__slide.is-active .intro-overlay__slide-bg.zoom-4 {
-  animation: jerky-zoom-4 3s ease-in-out forwards;
+   animation: jerky-zoom-4 3s ease-in-out forwards;
 }
 
 /* Слайд 1: пистолет ТРК — зум к руке, потом к баку, потом к колонке */
 @keyframes jerky-zoom-1 {
-  0%   { transform: scale(1)    translate(0%, 0%); }
-  30%  { transform: scale(1.1) translate(-2%, 5%); }
-  65%  { transform: scale(1.2)  translate(10%, 0%); }
-  100% { transform: scale(1)  translate(0%, 0%); }
+   0% {
+      transform: scale(1) translate(0%, 0%);
+   }
+
+   30% {
+      transform: scale(1.1) translate(-2%, 5%);
+   }
+
+   65% {
+      transform: scale(1.2) translate(10%, 0%);
+   }
+
+   100% {
+      transform: scale(1) translate(0%, 0%);
+   }
 }
 
 /* Слайд 2: машины на зарядке — от общего плана к конкретной машине */
 @keyframes jerky-zoom-2 {
-  0%   { transform: scale(1)    translate(0%, 0%); }
-  30%  { transform: scale(1.2)  translate(6%, -3%); }
-  65%  { transform: scale(1.35) translate(-6%, -3%); }
-  100% { transform: scale(1.3) translate(-7%, 10%); }
+   0% {
+      transform: scale(1) translate(0%, 0%);
+   }
+
+   30% {
+      transform: scale(1.2) translate(6%, -3%);
+   }
+
+   65% {
+      transform: scale(1.35) translate(-6%, -3%);
+   }
+
+   100% {
+      transform: scale(1.3) translate(-7%, 10%);
+   }
 }
 
 /* Слайд 3: колонки на закате — от здания к колонкам */
 @keyframes jerky-zoom-3 {
-  0%   { transform: scale(1)    translate(0%, 0%); }
-  30%  { transform: scale(1.2)  translate(-5%, 6%); }
-  65%  { transform: scale(1.2) translate(-5%, -10%); }
-  100% { transform: scale(1.5)  translate(10%, -3%); }
+   0% {
+      transform: scale(1) translate(0%, 0%);
+   }
+
+   30% {
+      transform: scale(1.2) translate(-5%, 6%);
+   }
+
+   65% {
+      transform: scale(1.2) translate(-5%, -10%);
+   }
+
+   100% {
+      transform: scale(1.5) translate(10%, -3%);
+   }
 }
 
 /* Слайд 4: колонки крупным планом — от экрана к пистолету */
 @keyframes jerky-zoom-4 {
-  0%   { transform: scale(1)    translate(0%, 0%); }
-  30%  { transform: scale(1.25) translate(4%, -5%); }
-  65%  { transform: scale(1.4)  translate(-5%, 4%); }
-  100% { transform: scale(1)  translate(0, 0); }
+   0% {
+      transform: scale(1) translate(0%, 0%);
+   }
+
+   30% {
+      transform: scale(1.25) translate(4%, -5%);
+   }
+
+   65% {
+      transform: scale(1.4) translate(-5%, 4%);
+   }
+
+   100% {
+      transform: scale(1) translate(0, 0);
+   }
 }
