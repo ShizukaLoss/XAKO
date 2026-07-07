@@ -7,7 +7,6 @@
    <link rel="stylesheet" href="css/colors.css">
 
    <link rel="stylesheet" href="css/banner/intro.css">
-   <link rel="stylesheet" href="css/banner/dots.css">
 
 
    <link rel="stylesheet" href="css/style.css">
@@ -79,6 +78,11 @@
          <button type="button" aria-label="Слайд 3"></button>
          <button type="button" aria-label="Слайд 4"></button>
       </div>
+
+      <button type="button" class="intro-overlay__reopen" id="introReopenBtn" aria-label="Показати промо ще раз">
+         <span class="intro-overlay__reopen-arrow">➜</span>
+         <span class="intro-overlay__reopen-text">Переглянути промо</span>
+      </button>
    </div>
 
 
@@ -86,7 +90,7 @@
       <header class="header">
          <div class="container">
 
-            <div class="header__body">
+            <div class="header__body" id="siteHeader">
                <div class="logo-container">
                   <a href="" class="header_link">
                      <img src="images/logo/Logo.svg" alt="" class="logo">
@@ -353,6 +357,7 @@
    </div>
 
    <script src="js/banner.js"></script>
+   <script src="js/banner_reopen.js"></script>
 </body>
 
 </html>

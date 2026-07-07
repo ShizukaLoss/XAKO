@@ -1,0 +1,80 @@
+/* ===== БАЗОВОЕ СОСТОЯНИЕ БАННЕРА (полноэкранное) ===== */
+.intro-overlay {
+   transition:
+      top .8s cubic-bezier(.65, 0, .35, 1),
+      left .8s cubic-bezier(.65, 0, .35, 1),
+      width .8s cubic-bezier(.65, 0, .35, 1),
+      height .8s cubic-bezier(.65, 0, .35, 1);
+}
+
+/* ===== СВЁРНУТОЕ СОСТОЯНИЕ ===== */
+.intro-overlay.is-collapsed {
+  top: 0;                        /* начинается от самого верха — хедер сам наедет сверху */
+  left: 0;
+  width: 100vw;
+  /* height задаётся через JS ниже, т.к. высота хедера зависит от реального рендера */
+}
+
+
+/* Прячем содержимое баннера (слайды, текст, точки) при сворачивании */
+.intro-overlay__slide,
+.intro-overlay__dim,
+.intro-overlay__content,
+.intro-overlay__dots {
+   transition: opacity .35s ease;
+}
+
+.intro-overlay.is-collapsed .intro-overlay__slide,
+.intro-overlay.is-collapsed .intro-overlay__dim,
+.intro-overlay.is-collapsed .intro-overlay__content,
+.intro-overlay.is-collapsed .intro-overlay__dots {
+   opacity: 0;
+   pointer-events: none;
+}
+
+/* ===== КНОПКА "РАЗВЕРНУТЬ ОБРАТНО" — видна только в свёрнутом состоянии ===== */
+.intro-overlay__reopen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 15px;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  background-color: var(--color-text);
+  z-index: 2;
+  clip-path: none;
+}
+
+.intro-overlay.is-collapsed .intro-overlay__reopen {
+   display: flex;
+}
+
+.intro-overlay__reopen-arrow {
+  display: inline-block;
+  transform: rotate(90deg);   /* стрелка смотрит вниз, намекая "развернуть" */
+  transition: transform .3s ease;
+}
+
+/* ===== Хедер: во время интро временно fixed и скрыт над экраном ===== */
+.header.header--intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10001;
+  transform: translateY(-100%);
+  transition: transform .6s ease;
+}
+
+.header.header--intro.is-visible {
+  transform: translateY(0);
+}
+
