@@ -90,10 +90,11 @@ section {
 /* Cards */
 .card {
    background-color: var(--color-bg);
-   border: 1px solid rgba(32, 28, 23, 0.08);
+   outline: 1px solid rgba(32, 28, 23, 0.08);
    border-top: 5px solid var(--color-primary);
    padding: 30px;
-   border-radius: 0 0 10px 10px;
+   corner-shape: square square bevel bevel;
+   border-radius: 1.2rem;
    box-shadow: 0 6px 18px rgba(32, 28, 23, 0.06);
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    position: relative;

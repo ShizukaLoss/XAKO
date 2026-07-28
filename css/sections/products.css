@@ -48,7 +48,6 @@
 }
 
 .btn-catalog:hover {
-   transform: translateY(-2px);
    color: var(--color-secondary);
 }
 
