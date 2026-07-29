@@ -20,17 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
       showSlide((current + 1) % slides.length);
    }
 
-   function startAutoplay() {
+   function startAutoplay(immediate) {
+      if (timer) return;
+      if (immediate) nextSlide();
       timer = setInterval(nextSlide, intervalMs);
    }
 
    function stopAutoplay() {
       clearInterval(timer);
+      timer = null;
    }
 
    function restartAutoplay() {
       stopAutoplay();
-      startAutoplay();
+      startAutoplay(false);
    }
 
    // Клик по точке — переключение вручную + сброс таймера автопрокрутки
@@ -42,5 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
    });
 
-   startAutoplay();
+   document.addEventListener('intro:collapse', stopAutoplay);
+   document.addEventListener('intro:expand', function () {
+      startAutoplay(true);
+   });
+
+   startAutoplay(false);
 });

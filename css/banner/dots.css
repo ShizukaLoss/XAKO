@@ -16,40 +16,26 @@
    border: none;
    cursor: pointer;
    z-index: 1;
-   /* Цвет рамки */
-   background-color: var(--dot-accent);
-   /* Зрізані кути (лівий верхній, правий нижній) */
-   clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
-   transition: width .3s ease, background-color .3s ease;
+
+   transition: outline 0.3s ease;
+   transition: width .3s ease;
+
+
+   corner-shape: bevel square bevel square;
+   border-radius: 0.3rem;
+   outline: 1px solid var(--color-banner-btn-outline);
+   background-color: var(--color-banner-btn-bg);
+
 }
 
-.intro-overlay__dots button::before {
-   content: '';
-   position: absolute;
-   /* Товщина рамки */
-   top: 1px;
-   left: 1px;
-   right: 1px;
-   bottom: 1px;
-   /* Колір фону всередині точки */
-   background-color: var(--dot-dark);
-   /* Внутрішній контур зрізу (на 2px меньше внешнего) */
-   clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
-   z-index: -1;
-   transition: background-color .3s ease;
-}
 
 .intro-overlay__dots button:hover {
-   background-color: #fff;
+   outline: 1px solid var(--color-banner-btn-outline-hover);
+   transition: outline 0.3s ease;
 }
 
 .intro-overlay__dots button.is-active {
    width: 44px;
-   /* активная точка вытянута шире */
-   background-color: var(--dot-border-color);
-}
-
-.intro-overlay__dots button.is-active::before {
-   background-color: var(--dot-accent);
-   /* заливка активной точки тоже зелёная — сплошной блок */
+   background-color: var(--color-banner-btn-bg-active);
+   outline: 1px solid var(--color-banner-btn-outline-active);
 }

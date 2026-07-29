@@ -1,13 +1,53 @@
 :root {
-   --color-body-bg: #ffffff;
-   --color-bg: #f5f2ed;
-   --color-text: #1a1f22;
-   --color-primary: #6f7850;
-   --color-secondary: #e8dcc0;
-   --color-accent: #8b6244;
-   --color-button-bg: #798358;
-   --color-h2-text: #562F00;
-   --dot-accent: #798358;
-   --dot-dark: #1c1c1a;
-   --dot-border-color: #cfcfc4;
+   --white: #fff;
+   --white-opacity: rgba(255, 255, 255, 0.1);
+   --muslin: #f5f2ed;
+   --ivory-beige: #e8dcc0;
+   --pastel-grey: #cfcfc4;
+   --hulk: #6f7850;
+   --dark-sage: #798358;
+   --dark-sage-opacity: rgba(111, 120, 80, 0.2);
+   --dark-oak: #8b6244;
+   --dark-brown: #562F00;
+   --stygian: #1a1f22;
+   --stygian-opacity: rgba(26, 31, 34, 0.08);
+   --black: #000;
+
+   --color-banner-text: var(--white);
+   --color-banner-p: var(--ivory-beige);
+   --color-banner-frame: var(--dark-sage-opacity);
+   --color-banner-btn-bg: var(--stygian);
+   --color-banner-btn-bg-active: var(--dark-sage);
+   --color-banner-btn-outline-active: var(--ivory-beige);
+   --color-banner-btn-outline-hover: var(--white);
+   --color-banner-btn-outline: var(--dark-sage);
+   --color-banner-reopen-btn-bg: var(--stygian);
+
+   --color-body-bg: var(--white);
+   --color-card-bg: var(--muslin);
+   --color-header-bg: var(--hulk);
+   --color-footer-bg: var(--stygian);
+   --color-footer-text: var(--muslin);
+
+   --color-text: var(--stygian);
+   --color-text-h3: var(--dark-brown);
+   --color-text-h4: var(--ivory-beige);
+
+   --color-divider-footer: var(--white-opacity);
+   --color-divider-section: var(--stygian-opacity);
+
+   --color-primary: var(--hulk);
+   --color-secondary: var(--dark-oak);
+
+   --color-btn-text: var(--stygian);
+   --color-btn-text-hover: var(--ivory-beige);
+   --color-btn-bg: var(--dark-sage);
+   --color-btn-bg-hover: var(--stygian);
+   --color-btn-outline: var(--stygian);
+
+   --color-card-bg: var(--muslin);
+   --color-card-outline: rgba(139, 98, 68, 0.15);
+   --color-card-box-shadow: rgba(139, 98, 68, 0.1);
+   --color-card-hover-shadow: rgba(139, 98, 68, 0.25);
+
 }

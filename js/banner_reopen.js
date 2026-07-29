@@ -28,6 +28,7 @@ function collapseIntro() {
   header.classList.add('is-visible');
 
   document.body.style.overflow = '';
+  document.dispatchEvent(new Event('intro:collapse'));
 }
 
 function expandIntro() {
@@ -38,6 +39,7 @@ function expandIntro() {
   overlay.style.height = ''; // сброс инлайн-высоты — вернётся 100vh из CSS
 
   document.body.style.overflow = 'hidden';
+  document.dispatchEvent(new Event('intro:expand'));
 }
 
 function handleScrollAttempt(e) {

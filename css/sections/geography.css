@@ -11,7 +11,7 @@
 
 .ukraine svg {
    border-radius: 3px;
-   box-shadow: 0 0 0 1px rgba(32, 28, 23, 0.12);
+   box-shadow: 0 0 0 1px var(--color-card-box-shadow);
 }
 
 .split-layout {
@@ -22,10 +22,14 @@
 
 .split-content {
    flex: 1 1 480px;
-   background-color: var(--color-bg);
-   border-left: 4px solid var(--color-accent);
+   background-color: var(--color-card-bg);
+   border-left: 4px solid var(--color-secondary);
    border-radius: 0 14px 14px 0;
    padding: 26px 30px;
+
+   corner-shape: square bevel bevel square;
+   border-radius: 0.7rem;
+   outline: 1px solid var(--color-card-outline);
 }
 
 .split-content p {

@@ -1,12 +1,9 @@
-@import "colors.css";
-
 .header {
    padding: 0;
-   background-color: var(--color-primary);
+   background-color: var(--color-header-bg);
    position: sticky;
    top: 0;
    z-index: 100;
-   box-shadow: 0 2px 16px rgba(32, 28, 23, 0.18);
 }
 
 .header .container {
@@ -22,9 +19,7 @@
    width: 100%;
    max-inline-size: 100%;
    height: auto;
-   color: var(--color-text);
 }
-
 
 
 .header_link {
@@ -85,12 +80,12 @@
 }
 
 .menu__link {
-   width: 180px;
+   width: 175px;
    position: relative;
    display: inline-flex;
    align-items: center;
    justify-content: center;
-   padding: 15px 0px;
+   padding: 13px 0px;
    color: #1a1f22;
    text-decoration: none;
    font-family: sans-serif;
@@ -101,41 +96,18 @@
    text-transform: uppercase;
    background: transparent;
    z-index: 1;
-   transition: color 0.25s ease;
+
+   transition: color 0.3s ease;
+   transition: background 0.3s ease;
+
+   corner-shape: bevel square bevel square;
+   border-radius: 0.7rem;
+   outline: 2px solid var(--color-btn-outline);
+   background-color: var(--color-btn-bg);
 }
 
-/* ЗОВНІШНІЙ ШАР (Створює білу рамку) */
-.menu__link::before {
-   content: "";
-   position: absolute;
-   inset: 0;
-   /* Розтягується на всю площу */
-   background-color: var(--color-text);
-   /* Колір рамки */
-   /* Координати точок для зрізу верхнього лівого та нижнього правого кутів на 12px */
-   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
-   z-index: -2;
-}
-
-/* ВНУТРІШНІЙ ШАР (Перекриває фон, залишаючи лінію товщиною 1px) */
-.menu__link::after {
-   content: "";
-   position: absolute;
-   inset: 2px; /* Товщина лінії рамки */
-   background: var(--color-button-bg); /* Колір внутрішнього фону (має збігатися з тлом шапки) */
-   /* Внутрішній clip-path зміщений на 1px для компенсації товщини рамки */
-   clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
-   z-index: -1;
-   transition: background 0.25s ease;
-}
-
-/* Ефект Hover (анімація при наведенні курсора) */
 .menu__link:hover {
-   color: var(--color-secondary);
-   /* Інверсія кольору тексту */
-}
-
-.menu__link:hover::after {
-   background: var(--color-text);
-   /* Повна заливка елемента кольором */
+   color: var(--color-btn-text-hover);
+   background-color: var(--color-btn-bg-hover);
+   transition: background 0.3s ease;
 }

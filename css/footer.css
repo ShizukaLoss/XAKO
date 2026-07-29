@@ -1,13 +1,11 @@
-@import "colors.css";
-
 .footer {
-   background-color: var(--color-text);
-   color: var(--color-bg);
+   background-color: var(--color-footer-bg);
+   color: var(--color-footer-text);
    font-size: 0.95rem;
 }
 
 .footer-container {
-   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   border-bottom: 1px solid var(--color-divider-footer);
 }
 
 .footer-container .container {
@@ -19,7 +17,7 @@
 }
 
 .footer-section h4 {
-   color: var(--color-secondary);
+   color: var(--color-text-h4);
    font-size: 1.2rem;
    text-transform: uppercase;
    margin: 0 0 20px 0;
@@ -37,7 +35,6 @@
 }
 
 .footer-section a {
-   color: var(--color-bg);
    text-decoration: none;
    transition: color 0.2s ease;
 }
