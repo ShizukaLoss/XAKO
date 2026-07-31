@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-   max-width: 1300px;
+   max-width: 1380px;
    margin: 0 auto;
    padding: 60px 20px;
 }
@@ -90,7 +90,7 @@ section {
    outline: 1px solid var(--color-card-outline);
    border-top: 5px solid var(--color-primary);
    padding: 30px;
-   corner-shape: square square bevel bevel;
+   corner-shape: bevel square bevel square;
    border-radius: 1.2rem;
    box-shadow: 0 6px 18px var(--color-card-box-shadow);
    transition: transform 0.3s ease, box-shadow 0.3s ease;

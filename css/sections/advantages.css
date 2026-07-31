@@ -25,7 +25,9 @@
 
 .adv-item-container {
    padding: 22px 18px 18px 18px;
-   border: 1px solid var(--color-card-outline);
+   outline: 1px solid var(--color-card-outline);
+   corner-shape: bevel square bevel square;
+   border-top: 5px solid var(--color-primary);
    border-radius: 14px;
    background-color: var(--color-card-bg);
    box-shadow: 0 4px 14px var(--color-card-box-shadow);
@@ -35,6 +37,7 @@
 .adv-item-container:hover {
    transform: translateY(-8px);
    box-shadow: 0 16px 26px var(--color-card-hover-shadow);
+   border-top-color: var(--color-secondary);
 }
 
 .adv-icon {
@@ -70,19 +73,18 @@
    flex-direction: column;
 }
 
-.adv-content h4 {
+.adv-content h3 {
    margin: 0 0 8px 0;
    font-family: var(--font-heading, sans-serif);
-   font-size: 15px;
-   color: var(--color-text);
-   font-weight: 700;
+   font-size: 1.2rem;
+   color: var(--color-text-h3);
    line-height: 1.25;
 }
 
 .adv-content p {
    margin: 0;
-   font-size: 13px;
+   font-size: 1rem;
    color: var(--color-text);
-   opacity: 0.72;
    line-height: 1.55;
+
 }

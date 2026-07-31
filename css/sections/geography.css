@@ -27,7 +27,7 @@
    border-radius: 0 14px 14px 0;
    padding: 26px 30px;
 
-   corner-shape: square bevel bevel square;
+   corner-shape: square bevel square bevel;
    border-radius: 0.7rem;
    outline: 1px solid var(--color-card-outline);
 }
