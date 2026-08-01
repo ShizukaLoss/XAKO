@@ -1,3 +1,25 @@
+:root {
+  --topbar-height: 0px;
+}
+
+.header.header--intro {
+  position: fixed;
+  top: var(--topbar-height);
+  left: 0;
+  width: 100%;
+  z-index: 10001;
+  transform: translateY(calc(-100% - var(--topbar-height)));
+  transition: transform .6s ease, top .3s ease;
+}
+
+.header.header--intro.is-visible {
+  transform: translateY(0);
+}
+
+.header.header--intro.header--stuck {
+  top: 0;
+}
+
 .header {
    padding: 0;
    background-color: var(--color-header-bg);
@@ -6,12 +28,55 @@
    z-index: 100;
 }
 
-.header .container {
+.header .container ,
+.header-topbar-container .container {
    padding: 0;
 }
 
 .logo-container {
    display: grid;
+}
+
+.header-topbar-container {
+   margin-bottom: 0;
+   border-bottom: 1px solid var(--color-divider-section);
+   /* background-color: var(--color-banner-btn-bg); */
+   background-color: firebrick;
+}
+
+.header-topbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   padding: 6px 24px;
+   color: var(--color-text-alter);
+
+   font-size: 13px;
+   width: 100%;
+   letter-spacing: 1px;
+}
+
+.header-topbar__contacts,
+.header-topbar__mail {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+}
+
+.header-topbar__contacts a {
+   text-decoration: none;
+}
+
+.header-topbar__contacts a:hover,
+.header-topbar__mail a:hover {
+   color: var(--muslin);
+}
+
+.header-topbar__contacts span ,
+.header-topbar__mail span{
+   /* opacity: .8; */
+   white-space: nowrap;
 }
 
 .logo {
@@ -33,7 +98,7 @@
 /* Текст під логотипом */
 .logo-subtitle {
    margin: 0;
-   color: #000;
+   color: var(--black);
    font-size: 15px;
    font-weight: 900;
    letter-spacing: 1px;

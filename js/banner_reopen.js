@@ -2,14 +2,26 @@ const overlay = document.getElementById('introOverlay');
 const header = document.querySelector('.header');
 const reopenBtn = document.getElementById('introReopenBtn');
 const wrapper = document.querySelector('.wrapper');
-header.classList.add('header--intro'); // сразу навешиваем доп. класс — для гарантированной специфичности
+header.classList.add('header--intro');
 
-const PEEK_HEIGHT = 50; // сколько px полоски "выглядывает" из-под хедера
+const PEEK_HEIGHT = 50;
 
 let isCollapsed = false;
 
 const cameFromSameSite = document.referrer &&
   new URL(document.referrer).hostname === window.location.hostname;
+
+function getHeaderTop() {
+  return parseFloat(getComputedStyle(header).top) || 0;
+}
+
+function syncCollapsedOverlayGeometry() {
+  if (!isCollapsed) return;
+  const headerTop = getHeaderTop();
+  const headerHeight = header.offsetHeight;
+  overlay.style.top = headerTop + 'px';
+  overlay.style.height = (headerHeight + PEEK_HEIGHT) + 'px';
+}
 
 if (cameFromSameSite) {
   overlay.classList.add('intro-overlay--no-transition');
@@ -23,16 +35,12 @@ if (cameFromSameSite) {
   document.body.style.overflow = 'hidden';
 }
 
-
 function syncContentOffset() {
   wrapper.style.paddingTop = (header.offsetHeight + PEEK_HEIGHT) + 'px';
 }
 
 syncContentOffset();
-
-if (isCollapsed) {
-  overlay.style.height = (header.offsetHeight + PEEK_HEIGHT) + 'px';
-}
+syncCollapsedOverlayGeometry();
 
 requestAnimationFrame(function () {
   requestAnimationFrame(function () {
@@ -45,11 +53,9 @@ function collapseIntro() {
   if (isCollapsed) return;
   isCollapsed = true;
 
-  const headerHeight = header.offsetHeight; // реальная высота хедера прямо сейчас
-  overlay.style.height = (headerHeight + PEEK_HEIGHT) + 'px';
-
   overlay.classList.add('is-collapsed');
   header.classList.add('is-visible');
+  syncCollapsedOverlayGeometry();
 
   document.body.style.overflow = '';
   document.dispatchEvent(new Event('intro:collapse'));
@@ -60,7 +66,8 @@ function expandIntro() {
 
   overlay.classList.remove('is-collapsed');
   header.classList.remove('is-visible');
-  overlay.style.height = ''; // сброс инлайн-высоты — вернётся 100vh из CSS
+  overlay.style.height = '';
+  overlay.style.top = '';
 
   document.body.style.overflow = 'hidden';
   document.dispatchEvent(new Event('intro:expand'));
@@ -90,16 +97,15 @@ reopenBtn.addEventListener('click', function (e) {
 });
 
 overlay.addEventListener('click', function (e) {
-  if (e.target.closest('.intro-overlay__dots')) return; // не закрывать при клике по точкам
+  if (e.target.closest('.intro-overlay__dots')) return;
   if (!isCollapsed) {
     collapseIntro();
   }
 });
 
-
 window.addEventListener('resize', function () {
   syncContentOffset();
-  if (isCollapsed) {
-    overlay.style.height = (header.offsetHeight + PEEK_HEIGHT) + 'px';
-  }
+  syncCollapsedOverlayGeometry();
 });
+
+document.addEventListener('topbar:stuckchange', syncCollapsedOverlayGeometry);
