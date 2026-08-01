@@ -13,6 +13,11 @@
   /* height задаётся через JS ниже, т.к. высота хедера зависит от реального рендера */
 }
 
+.intro-overlay--no-transition,
+.intro-overlay--no-transition * {
+  transition: none !important;
+}
+
 
 /* Прячем содержимое баннера (слайды, текст, точки) при сворачивании */
 .intro-overlay__slide,

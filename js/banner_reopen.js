@@ -8,7 +8,20 @@ const PEEK_HEIGHT = 50; // сколько px полоски "выглядыва�
 
 let isCollapsed = false;
 
-document.body.style.overflow = 'hidden';
+const cameFromSameSite = document.referrer &&
+  new URL(document.referrer).hostname === window.location.hostname;
+
+if (cameFromSameSite) {
+  overlay.classList.add('intro-overlay--no-transition');
+  header.classList.add('intro-overlay--no-transition');
+
+  isCollapsed = true;
+  overlay.classList.add('is-collapsed');
+  header.classList.add('is-visible');
+  document.body.style.overflow = '';
+} else {
+  document.body.style.overflow = 'hidden';
+}
 
 
 function syncContentOffset() {
@@ -16,6 +29,17 @@ function syncContentOffset() {
 }
 
 syncContentOffset();
+
+if (isCollapsed) {
+  overlay.style.height = (header.offsetHeight + PEEK_HEIGHT) + 'px';
+}
+
+requestAnimationFrame(function () {
+  requestAnimationFrame(function () {
+    overlay.classList.remove('intro-overlay--no-transition');
+    header.classList.remove('intro-overlay--no-transition');
+  });
+});
 
 function collapseIntro() {
   if (isCollapsed) return;
