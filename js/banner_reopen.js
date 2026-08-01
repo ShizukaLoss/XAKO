@@ -60,7 +60,17 @@ window.addEventListener('keydown', function (e) {
   }
 });
 
-reopenBtn.addEventListener('click', expandIntro);
+reopenBtn.addEventListener('click', function (e) {
+  e.stopPropagation();
+  expandIntro();
+});
+
+overlay.addEventListener('click', function (e) {
+  if (e.target.closest('.intro-overlay__dots')) return; // не закрывать при клике по точкам
+  if (!isCollapsed) {
+    collapseIntro();
+  }
+});
 
 
 window.addEventListener('resize', function () {
