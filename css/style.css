@@ -4,10 +4,6 @@
 @import url("header.css");
 @import url("footer.css");
 
-@import url("banner/intro.css");
-@import url("sections/products.css");
-@import url("sections/advantages.css");
-@import url("sections/geography.css");
 
 :root {
    --font-heading: "Manrope", sans-serif;

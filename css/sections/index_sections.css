@@ -1,0 +1,202 @@
+/* ========== PRODUCTS SECTION =============================================================================== */
+
+.products p {
+   margin-top: 0;
+}
+
+.products .button {
+   display: flex;
+   justify-content: center;
+}
+
+.btn-catalog {
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 30px 35px;
+   margin-top: 50px;
+   color: var(--color-btn-text);
+   font-weight: 700;
+   font-size: 16px;
+   text-transform: uppercase;
+   text-decoration: none;
+   max-height: 50px;
+   letter-spacing: 1px;
+
+   transition: transform 0.2s ease;
+   transition: color 0.3s ease;
+   transition: background 0.3s ease;
+
+   corner-shape: bevel square bevel square;
+   border-radius: 0.7rem;
+   outline: 2px solid var(--color-btn-outline);
+   background-color: var(--color-btn-bg);
+}
+
+
+.btn-catalog:hover {
+   color: var(--color-btn-text-hover);
+   background-color: var(--color-btn-bg-hover);
+   transition: background 0.3s ease;
+}
+
+
+.btn-arrow {
+   display: inline-block;
+   max-width: 0;
+   opacity: 0;
+   transform: translateX(-15px);
+   transition: all 0.3s ease;
+   white-space: nowrap;
+   margin-left: 0;
+   font-size: 18px;
+}
+
+.btn-catalog:hover .btn-arrow {
+   max-width: 20px;
+   opacity: 1;
+   transform: translateX(0);
+   margin-left: 10px;
+   fill: var(--color-btn-text-hover);
+}
+
+
+
+/* ========== ADVANTAGES SECTION =============================================================================== */
+
+
+.advantages-panel {
+   display: grid;
+   /* Адаптивна сітка, яка розподіляє елементи. minmax(220px) гарантує, що блоки не будуть занадто вузькими */
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: 25px;
+}
+
+.advantages-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+}
+
+.adv-item-container {
+   flex: 1 1 220px;
+   max-width: 280px;
+}
+
+.adv-item {
+   display: flex;
+   align-items: start;
+   gap: 15px;
+}
+
+.adv-item-container {
+   padding: 22px 18px 18px 18px;
+   outline: 1px solid var(--color-card-outline);
+   corner-shape: bevel square bevel square;
+   border-top: 5px solid var(--color-primary);
+   border-radius: 14px;
+   background-color: var(--color-card-bg);
+   box-shadow: 0 4px 14px var(--color-card-box-shadow);
+   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.adv-item-container:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 16px 26px var(--color-card-hover-shadow);
+   border-top-color: var(--color-secondary);
+}
+
+.adv-icon {
+   flex-shrink: 0;
+   width: 50px;
+   height: 50px;
+   background: linear-gradient(135deg, var(--ivory-beige), var(--white));
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--color-secondary);
+   transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.adv-item-container:hover .adv-icon {
+   transform: rotate(-6deg) scale(1.06);
+   color: var(--color-primary);
+}
+
+.adv-icon svg {
+   width: 24px;
+   height: 24px;
+   fill: none;
+   stroke: currentColor;
+   stroke-width: 2;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+}
+
+.adv-content {
+   display: flex;
+   flex-direction: column;
+}
+
+.adv-content h3 {
+   margin: 0 0 8px 0;
+   font-family: var(--font-heading, sans-serif);
+   font-size: 1.2rem;
+   color: var(--color-text-h3);
+   line-height: 1.25;
+}
+
+.adv-content p {
+   margin: 0;
+   font-size: 1rem;
+   color: var(--color-text);
+   line-height: 1.55;
+
+}
+
+/* ========== GEOGRAPHY SECTION =============================================================================== */
+
+.geography h2 {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.ukraine {
+   display: inline-flex;
+   align-items: center;
+}
+
+.ukraine svg {
+   border-radius: 3px;
+   box-shadow: 0 0 0 1px var(--color-card-box-shadow);
+}
+
+.split-layout {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.split-content {
+   flex: 1 1 480px;
+   background-color: var(--color-card-bg);
+   border-left: 4px solid var(--color-secondary);
+   border-radius: 0 14px 14px 0;
+   padding: 26px 30px;
+
+   corner-shape: square bevel square bevel;
+   border-radius: 0.7rem;
+   outline: 1px solid var(--color-card-outline);
+}
+
+.split-content p {
+   margin: 0 0 14px 0;
+}
+
+.split-content p:last-child {
+   margin-bottom: 0;
+}
